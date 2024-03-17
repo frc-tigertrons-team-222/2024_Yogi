@@ -1,0 +1,31 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 2,
+      "y": 7.0
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Diagonal_Spin"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Drivetrain Stop!"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "Test Paths",
+  "choreoAuto": false
+}

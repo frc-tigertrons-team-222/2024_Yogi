@@ -1,0 +1,99 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.59,
+        "y": 7.37
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 2.958293490394748,
+        "y": 7.37
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 3.4887780413858698,
+        "y": 6.797413878515701
+      },
+      "prevControl": {
+        "x": 2.9672572412141607,
+        "y": 6.797413878515701
+      },
+      "nextControl": {
+        "x": 4.010298841557587,
+        "y": 6.797413878515701
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 4.558606564021638,
+        "y": 7.779909460528141
+      },
+      "prevControl": {
+        "x": 4.005497940073894,
+        "y": 7.779909460528141
+      },
+      "nextControl": {
+        "x": 5.140871652307077,
+        "y": 7.779909460528141
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 6.319820866592089,
+        "y": 7.37
+      },
+      "prevControl": {
+        "x": 5.075326462709665,
+        "y": 7.37
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "Womp",
+      "waypointRelativePos": 0.0,
+      "command": {
+        "type": "sequential",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "m_Shooter.Shoot()"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 2.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 360.0,
+    "maxAngularAcceleration": 360.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Test Paths",
+  "previewStartingState": null,
+  "useDefaultConstraints": false
+}

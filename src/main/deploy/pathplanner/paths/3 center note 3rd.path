@@ -1,0 +1,52 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.9,
+        "y": 4.69
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.5429233708823726,
+        "y": 1.579460831130689
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.241007265862514,
+        "y": 2.36
+      },
+      "prevControl": {
+        "x": 6.729794742249817,
+        "y": -0.03899903286742284
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 40.36453657309748,
+    "rotateFast": true
+  },
+  "reversed": false,
+  "folder": "Erik's silly little paths",
+  "previewStartingState": {
+    "rotation": -40.0,
+    "velocity": 0
+  },
+  "useDefaultConstraints": true
+}

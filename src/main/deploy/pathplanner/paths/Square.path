@@ -1,0 +1,97 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 1.9167851101714297,
+        "y": 7.0
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 1.9386183453272614,
+        "y": 6.135139078786519
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.9167851101714297,
+        "y": 3.1003193921258694
+      },
+      "prevControl": {
+        "x": 1.9167851101714297,
+        "y": 6.89930230924064
+      },
+      "nextControl": {
+        "x": 1.9167851101714297,
+        "y": 3.0703124805603887
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.83,
+        "y": 3.1003193921258694
+      },
+      "prevControl": {
+        "x": 5.829406704636706,
+        "y": 3.005684712652482
+      },
+      "nextControl": {
+        "x": 5.854073726844432,
+        "y": 6.940243929883847
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 5.83,
+        "y": 7.0
+      },
+      "prevControl": {
+        "x": 5.8614865008375565,
+        "y": 7.000048705501056
+      },
+      "nextControl": {
+        "x": 1.894951875010133,
+        "y": 6.993912994918189
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 1.9167851101714297,
+        "y": 7.0
+      },
+      "prevControl": {
+        "x": 2.8920029471319264,
+        "y": 7.023023975123689
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 2.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": 0,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Test Paths",
+  "previewStartingState": null,
+  "useDefaultConstraints": false
+}
