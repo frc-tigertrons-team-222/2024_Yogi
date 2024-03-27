@@ -44,7 +44,14 @@ public SparkPIDController ShoulderPIDController = ShoulderSpark.getPIDController
   ShoulderPIDController.setFeedbackDevice(ShoulderEncoder);
   // ShoulderPIDController.setOutputRange(-0.7, 0.7);
 
-
+  // 0.9843885 <- new zero offset position. Have to set zeroffset for ShoulderEncoder using this number.
+  // Have to call setPositionConversionFactor, setVelocityConversionFactor, and setInverted before setting zero offset. 
+  // Position Conversion Factor and Velocity Conversion Factor will be 1, the encoder will not be inverted.
+ 
+  ShoulderEncoder.setVelocityConversionFactor(1);
+  ShoulderEncoder.setPositionConversionFactor(1);
+  ShoulderEncoder.setInverted(false);
+  ShoulderEncoder.setZeroOffset(0.9843885);
 
 
   ShoulderSpark2.follow(ShoulderSpark,true);  

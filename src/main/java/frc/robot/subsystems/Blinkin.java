@@ -15,12 +15,13 @@ public class Blinkin {
 	 * if the robot is not in hatMode and in normal drive, the LED turns solid white (0.93)
 	 */
 	public void limelightSighted() {
-		blinkin.set(-0.37);
+		// blinkin.set(-0.37);
+		blinkin.set(0.63);
 	}
     public void noNoteLoaded() {
-		blinkin.set(0.99);
+		blinkin.set(0.61);
 	}
     public void noteLoaded() {
-		blinkin.set(0.65);
+		blinkin.set(0.77);
 	}
 }

@@ -1,0 +1,294 @@
+{
+  "version": 1.0,
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 8.085011134392815,
+        "y": 7.507313826979197
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 8.04601210152539,
+        "y": 7.361067453726355
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 8.085011134392815,
+        "y": 0.6044850094450789
+      },
+      "prevControl": {
+        "x": 8.085011134392799,
+        "y": 1.208970018890158
+      },
+      "nextControl": {
+        "x": 8.085011134392817,
+        "y": 0.5362367019270863
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 6.798043049767811,
+        "y": 1.3747159085767113
+      },
+      "prevControl": {
+        "x": 7.441527092080313,
+        "y": 0.6873579542883561
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": null
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "eventMarkers": [
+    {
+      "name": "1",
+      "waypointRelativePos": 0,
+      "command": {
+        "type": "race",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Infeed Shoot"
+              }
+            },
+            {
+              "type": "wait",
+              "data": {
+                "waitTime": 0.1
+              }
+            },
+            {
+              "type": "named",
+              "data": {
+                "name": "Shooter Speed 1000"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "2",
+      "waypointRelativePos": 0.3,
+      "command": {
+        "type": "race",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Infeed Intake"
+              }
+            },
+            {
+              "type": "wait",
+              "data": {
+                "waitTime": 0.1
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "3",
+      "waypointRelativePos": 0.4,
+      "command": {
+        "type": "race",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Infeed Shoot"
+              }
+            },
+            {
+              "type": "wait",
+              "data": {
+                "waitTime": 0.1
+              }
+            },
+            {
+              "type": "named",
+              "data": {
+                "name": "Shooter Speed 1000"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "4",
+      "waypointRelativePos": 0.5,
+      "command": {
+        "type": "race",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Infeed Intake"
+              }
+            },
+            {
+              "type": "wait",
+              "data": {
+                "waitTime": 0.1
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "5",
+      "waypointRelativePos": 0.6,
+      "command": {
+        "type": "race",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Infeed Shoot"
+              }
+            },
+            {
+              "type": "wait",
+              "data": {
+                "waitTime": 0.1
+              }
+            },
+            {
+              "type": "named",
+              "data": {
+                "name": "Shooter Speed 1000"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "6",
+      "waypointRelativePos": 0.65,
+      "command": {
+        "type": "race",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Infeed Intake"
+              }
+            },
+            {
+              "type": "wait",
+              "data": {
+                "waitTime": 0.1
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "7",
+      "waypointRelativePos": 0.8,
+      "command": {
+        "type": "race",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Infeed Shoot"
+              }
+            },
+            {
+              "type": "wait",
+              "data": {
+                "waitTime": 0.1
+              }
+            },
+            {
+              "type": "named",
+              "data": {
+                "name": "Shooter Speed 1000"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "8",
+      "waypointRelativePos": 0.9,
+      "command": {
+        "type": "race",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Infeed Intake"
+              }
+            },
+            {
+              "type": "wait",
+              "data": {
+                "waitTime": 0.1
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "9",
+      "waypointRelativePos": 1.8,
+      "command": {
+        "type": "parallel",
+        "data": {
+          "commands": [
+            {
+              "type": "named",
+              "data": {
+                "name": "Infeed Shoot"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 1.5,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -56.65999999999997,
+    "rotateFast": false
+  },
+  "reversed": false,
+  "folder": "Defensive Middle (HAZARD)",
+  "previewStartingState": {
+    "rotation": -56.659292653522925,
+    "velocity": 0
+  },
+  "useDefaultConstraints": false
+}

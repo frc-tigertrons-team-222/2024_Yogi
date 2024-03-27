@@ -1,0 +1,49 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 1.289429657244114,
+      "y": 4.08
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "1st Shot (SPSLRS)"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "1st Note (SPSLRS)"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "2nd Shot (SPSLRS)"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "2nd Note (SPSLRS)"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "3rd Shot (SPSLRS)"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "Home Relative Paths",
+  "choreoAuto": false
+}

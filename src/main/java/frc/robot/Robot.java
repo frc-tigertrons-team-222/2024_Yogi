@@ -14,6 +14,11 @@ import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import frc.robot.Autos;
 import frc.robot.subsystems.Blinkin;
+import frc.robot.subsystems.LimelightSubsystem;
+
+
+
+
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -31,6 +36,7 @@ public class Robot extends TimedRobot {
   private Blinkin m_Blinkin;
 
   SendableChooser<Command> m_chooser = new SendableChooser();
+  private LimelightSubsystem m_Limelight;
 
 
   /**
@@ -43,8 +49,10 @@ public class Robot extends TimedRobot {
     // autonomous chooser on the dashboard.
     m_robotContainer = new RobotContainer();
     m_autos = m_robotContainer.getAutos();
+    m_Blinkin = new Blinkin();
+    m_Limelight=m_robotContainer.getLimelight();
     m_robotContainer.calibrateGyro();
-    CameraServer.startAutomaticCapture();
+    //CameraServer.startAutomaticCapture();
     //***Get the autos and add to shuffleboard***//
     //returns names of pathplanner autos via Strings
     // List<String> auto_command_files = m_autos.getAutoNames(); 
@@ -54,6 +62,14 @@ public class Robot extends TimedRobot {
     m_chooser.addOption("3 center note-Erik", m_autos.makePathPlannerAuto("3 center note-Erik"));
     m_chooser.addOption("Amp Shot, Long Shot 2nd Note", m_autos.makePathPlannerAuto("Amp Shot, Long Shot 2nd Note"));
     m_chooser.addOption("SPSLRS", m_autos.makePathPlannerAuto("SPSLRS"));
+    m_chooser.addOption("Test Amp Shot, Long Shot 1st Note", m_autos.makePathPlannerAuto("Test Amp Shot, Long Shot 1st Note"));
+    m_chooser.addOption("Amp Shot, Long Shot 1st Note REL", m_autos.makePathPlannerAuto("Amp Shot, Long Shot 1st Note REL"));
+    m_chooser.addOption("3 center note-Erik REL", m_autos.makePathPlannerAuto("3 center note-Erik REL"));
+    m_chooser.addOption("Amp long shot 1st note def", m_autos.makePathPlannerAuto("Amp long shot 1st note def"));
+    m_chooser.addOption("Defensive Middle REL", m_autos.makePathPlannerAuto("Defensive Middle REL"));
+
+    // m_chooser.addOption("Defensive Middle ", m_autos.makePathPlannerAuto("Defensive Middle "));
+
 
     //Add each .auto file as options
     // int i;
@@ -138,15 +154,17 @@ public class Robot extends TimedRobot {
   /** This function is called periodically during operator control. */
   @Override
   public void teleopPeriodic() {
-    if(!m_robotContainer.getInfeed().getResult()){
+    if(m_robotContainer.getInfeed().getResult()){
       m_Blinkin.noNoteLoaded();
     }
-    else if (m_robotContainer.getInfeed().getResult()) {
-      m_Blinkin.noteLoaded();
-    } 
-    else if (m_robotContainer.getInfeed().getResult()&(Math.abs(m_robotContainer.getLimelight().getXPosition())>1)){
+ else if ((!m_robotContainer.getInfeed().getResult())&(Math.abs(m_Limelight.getXPosition())<3)&(m_robotContainer.isTracking())){
       m_Blinkin.limelightSighted();
     }
+
+    else if (!m_robotContainer.getInfeed().getResult()) {
+      m_Blinkin.noteLoaded();
+    } 
+   
   }
 
   @Override

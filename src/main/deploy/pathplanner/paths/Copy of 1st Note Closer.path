@@ -3,25 +3,41 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.12,
-        "y": 7.67
+        "x": 1.46,
+        "y": 6.57
       },
       "prevControl": null,
       "nextControl": {
-        "x": 6.1718160191664815,
-        "y": 7.083569871557796
+        "x": 1.5599939549282102,
+        "y": 6.568900464727679
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 8.35,
-        "y": 7.6
+        "x": 2.2360728482140724,
+        "y": 7.0
       },
       "prevControl": {
-        "x": 6.585293762749046,
-        "y": 7.257313826979199
+        "x": 1.7447791652318658,
+        "y": 7.0
+      },
+      "nextControl": {
+        "x": 2.3084901787668293,
+        "y": 7.0
+      },
+      "isLocked": false,
+      "linkedName": null
+    },
+    {
+      "anchor": {
+        "x": 2.8981397630253705,
+        "y": 7.0
+      },
+      "prevControl": {
+        "x": 2.546536383770039,
+        "y": 7.0
       },
       "nextControl": null,
       "isLocked": false,
@@ -39,13 +55,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -21.0,
+    "rotation": 0,
     "rotateFast": true
   },
   "reversed": false,
   "folder": "Shoot, Amp, Long Shot",
   "previewStartingState": {
-    "rotation": -90.0,
+    "rotation": 33.627609292351174,
     "velocity": 0
   },
   "useDefaultConstraints": true

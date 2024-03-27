@@ -2,10 +2,10 @@
   "version": 1.0,
   "startingPose": {
     "position": {
-      "x": 0.5755029173876011,
-      "y": 6.922939429924444
+      "x": 0.7824422299675968,
+      "y": 4.397140955802102
     },
-    "rotation": 0
+    "rotation": -59.74000000000001
   },
   "command": {
     "type": "sequential",
@@ -16,15 +16,15 @@
           "data": {
             "commands": [
               {
-                "type": "path",
+                "type": "named",
                 "data": {
-                  "pathName": "1st shot updated"
+                  "name": "Shoulder Home+0.015"
                 }
               },
               {
-                "type": "named",
+                "type": "wait",
                 "data": {
-                  "name": "Shoulder 0.737"
+                  "waitTime": 0.3
                 }
               }
             ]
@@ -34,6 +34,12 @@
           "type": "race",
           "data": {
             "commands": [
+              {
+                "type": "named",
+                "data": {
+                  "name": "Shoulder Home+0.015"
+                }
+              },
               {
                 "type": "named",
                 "data": {
@@ -43,13 +49,7 @@
               {
                 "type": "wait",
                 "data": {
-                  "waitTime": 1.0
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Shoulder 0.737"
+                  "waitTime": 0.3
                 }
               }
             ]
@@ -62,7 +62,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "1st note updated"
+                  "pathName": "3 center note start"
                 }
               },
               {
@@ -75,32 +75,25 @@
           }
         },
         {
+          "type": "path",
+          "data": {
+            "pathName": "3 center note 2nd"
+          }
+        },
+        {
           "type": "race",
           "data": {
             "commands": [
               {
-                "type": "path",
+                "type": "named",
                 "data": {
-                  "pathName": "AmpLineup"
+                  "name": "Shoulder Home+0.059"
                 }
               },
               {
-                "type": "named",
+                "type": "wait",
                 "data": {
-                  "name": "Shoulder Amp Pose"
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "race",
-          "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Amp"
+                  "waitTime": 0.5
                 }
               }
             ]
@@ -113,7 +106,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Infeed Shoot"
+                  "name": "Shoulder Home+0.059"
                 }
               },
               {
@@ -125,7 +118,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder Amp Pose"
+                  "name": "Infeed Shoot"
                 }
               }
             ]
@@ -138,7 +131,7 @@
               {
                 "type": "path",
                 "data": {
-                  "pathName": "2nd Note"
+                  "pathName": "3 center note 3rd"
                 }
               },
               {
@@ -151,22 +144,9 @@
           }
         },
         {
-          "type": "race",
+          "type": "path",
           "data": {
-            "commands": [
-              {
-                "type": "path",
-                "data": {
-                  "pathName": "Long Shot"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Infeed Intake"
-                }
-              }
-            ]
+            "pathName": "3 center note end"
           }
         },
         {
@@ -176,13 +156,13 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.770"
+                  "name": "Shoulder Home+0.059"
                 }
               },
               {
                 "type": "wait",
                 "data": {
-                  "waitTime": 1.0
+                  "waitTime": 0.5
                 }
               }
             ]
@@ -195,7 +175,13 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.770"
+                  "name": "Shoulder Home+0.059"
+                }
+              },
+              {
+                "type": "wait",
+                "data": {
+                  "waitTime": 0.5
                 }
               },
               {
@@ -203,19 +189,19 @@
                 "data": {
                   "name": "Infeed Shoot"
                 }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 1.0
-                }
               }
             ]
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Drivetrain Stop!"
           }
         }
       ]
     }
   },
-  "folder": "Auto Paths",
+  "folder": "Home Relative Paths",
   "choreoAuto": false
 }

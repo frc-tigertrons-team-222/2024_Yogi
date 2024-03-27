@@ -24,6 +24,8 @@ import java.lang.Math;
  * wherever the
  * constants are needed, to reduce verbosity.
  */
+
+ //New offset 0.712
 public final class Constants {
   public static final class DriveConstants {
     // Driving Parameters - Note that these are not the maximum capable speeds of
@@ -147,11 +149,21 @@ public final class Constants {
   public static final class NeoMotorConstants {
     public static final double kFreeSpeedRpm = 5676;
   }
+
+  // Highest was 0.981, lowest is 0.714, was 0.677. So need to add 0.0
+  // 0.964 is highest postion
+  // Now that we're programming the offset, we can try subtracting 0.037 from it 
   public static final class ShoulderConstants {
-    public static final double home = 0.677; //lol, was 0.651
-    public static final double upper = 0.973; //theoretically, was 0.947
-    public static final double amp = 0.936; //was 0.91
-    public static final double farshot = 0.704;//was 0.678
-    public static final double realfarshot = 0.771; //was 0.745
+    public static final double home = 0.681; //lol, was 0.677, was 0.714
+    // public static final double upper = 0.973; //theoretically, was 0.947, was
+    public static final double upper = home + 0.259;
+    // public static final double amp = 0.967 +  0.253; //was 0.936, was
+    public static final double amp = home +  0.253; 
+    // public static final double farshot = 0.741;//was 0.704, was
+    public static final double farshot = home + 0.027;
+    // public static final double realfarshot = 0.808; //was 0.771, was
+    public static final double realfarshot = home + 0.094;
+
+
   }
 }

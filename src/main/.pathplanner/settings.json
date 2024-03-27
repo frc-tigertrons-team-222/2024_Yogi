@@ -3,12 +3,21 @@
   "robotLength": 0.98,
   "holonomicMode": true,
   "pathFolders": [
+    "4 Note Open Side",
+    "Defensive Middle (HAZARD)",
+    "Erik's silly little paths",
+    "Example Folder",
+    "Maddy Got Bored...",
+    "Amp long shot def",
+    "SPSLRS",
+    "Shoot, Amp, Long Shot",
     "Test Paths"
   ],
   "autoFolders": [
     "Auto Paths",
-    "Undeveloped Autos",
-    "Test Paths"
+    "Home Relative Paths",
+    "Test Paths",
+    "Undeveloped Autos"
   ],
   "defaultMaxVel": 3.0,
   "defaultMaxAccel": 3.0,

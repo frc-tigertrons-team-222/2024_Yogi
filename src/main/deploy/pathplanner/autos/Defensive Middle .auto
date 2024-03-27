@@ -1,0 +1,31 @@
+{
+  "version": 1.0,
+  "startingPose": {
+    "position": {
+      "x": 0.5581977909799064,
+      "y": 6.961327366835257
+    },
+    "rotation": 0
+  },
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "1st Note Intake (Defensive)"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "5 Note Intake n Spit"
+          }
+        }
+      ]
+    }
+  },
+  "folder": "Auto Paths",
+  "choreoAuto": false
+}

@@ -49,7 +49,7 @@ public class WristInfeed extends SubsystemBase {
 
      InfeedMotor1.setPeriodicFramePeriod(PeriodicFrame.kStatus1,20);
      InfeedMotor1.setPeriodicFramePeriod(PeriodicFrame.kStatus2,20);
-    SmartDashboard.putNumber("Infeed Speed", 0.65);
+    SmartDashboard.putNumber("Infeed Speed", 1);//0.7
     SmartDashboard.putNumber("Infeed Stop Speed", 0.5);
 
     // SmartDashboard.putNumber("Infeed Stop kP", kP);

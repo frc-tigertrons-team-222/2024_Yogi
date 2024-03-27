@@ -34,6 +34,7 @@ import frc.robot.subsystems.WristInfeed;
 import frc.robot.subsystems.GroundInfeed;
 import frc.robot.subsystems.Infeed;
 import frc.robot.subsystems.LimelightSubsystem;
+import frc.robot.subsystems.Solenoid;
 import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Hook;
 import frc.robot.subsystems.Blinkin;
@@ -56,6 +57,7 @@ public class RobotContainer {
   private final Hook m_Hook = new Hook();
   private final Autos m_autos = new Autos(m_robotDrive,m_Infeed,m_ShoulderSubsystem, m_Shooter);
   private final LimelightSubsystem m_Limelight = new LimelightSubsystem();
+  private final Solenoid m_Solenoid=new Solenoid(); 
   // The driver's controller
 //   XboxController m_driverController = new XboxController(OIConstants.kDriverControllerPort);
   CommandXboxController m_driverController = new CommandXboxController(0);
@@ -150,7 +152,10 @@ public class RobotContainer {
                                                                     m_robotDrive));
     m_driverController.leftBumper().whileTrue(m_Infeed.Outtake()).whileFalse(m_Infeed.StopInfeed());
     m_driverController.start().whileTrue(new RunCommand(()->m_robotDrive.zeroHeading()));
-    m_driverController.rightStick().whileTrue(new ParallelCommandGroup(turnTowardsTag(),aimAtTag()));
+    m_driverController.back().whileTrue(m_Infeed.WristOuttake()).whileFalse(m_Infeed.StopInfeed());
+   // m_driverController.rightStick().whileTrue(new ParallelCommandGroup(turnTowardsTag(),aimAtTag()));
+    m_driverController.rightStick().whileTrue(turnTowardsTag());
+
 
     //NOTE was onTrue
     //m_driverController2.b().whileTrue(m_ShoulderSubsystem.ShoulderSet(ShoulderConstants.forward));
@@ -162,7 +167,7 @@ public class RobotContainer {
     m_driverController2.leftTrigger().whileTrue(m_Shooter.ShootOtherWay()).whileFalse(m_Shooter.StopShoot());
     m_driverController2.rightBumper().onTrue(m_ShoulderSubsystem.ShoulderSetPosition(ShoulderConstants.amp).alongWith(m_Shooter.TrapShoot())).whileFalse(m_Shooter.StopShoot());
     m_driverController2.leftBumper().onTrue(m_ShoulderSubsystem.ShoulderSetPosition(ShoulderConstants.amp)).whileFalse(m_Shooter.StopShoot());
-    // m_driverController2.x().onTrue(m_ShoulderSubsystem.ShoulderSetPosition(ShoulderConstants.amp)).whileFalse(m_ShoulderSubsystem.ShoulderStop().andThen(m_Shooter.StopShoot()));
+    m_driverController2.start().whileTrue(m_Solenoid.switchOn()).whileFalse(m_Solenoid.switchOff()); //Should make it on true and then consequently shut it off so it can't be a sustained
 // 
 
 
@@ -260,7 +265,8 @@ public class RobotContainer {
     return new SequentialCommandGroup(
       m_robotDrive.stopDriveTrain(),
       m_Shooter.StopShoot(),
-      m_Infeed.StopInfeed()
+      m_Infeed.StopInfeed(),
+      m_Solenoid.switchOff()
     );
   }
 
@@ -273,7 +279,7 @@ public class RobotContainer {
   public void loadAutoCommands(){
     NamedCommands.registerCommand("Shooter Shoot", m_Shooter.Shoot().repeatedly());
     NamedCommands.registerCommand("Shooter Shoot In", m_Shooter.ShootOtherWay().repeatedly());
-    NamedCommands.registerCommand("Infeed Intake", this.FullIntake(0.8)); //not repeated, because it is natively repeated
+    NamedCommands.registerCommand("Infeed Intake", this.FullIntake(0.6)); //not repeated, because it is natively repeated
     NamedCommands.registerCommand("Infeed Outtake",m_Infeed.Outtake().repeatedly());
     NamedCommands.registerCommand("Drivetrain Stop!",m_robotDrive.stopDriveTrain());
     NamedCommands.registerCommand("Infeed Shoot",m_Infeed.GoOutfeed().repeatedly());
@@ -287,20 +293,43 @@ public class RobotContainer {
 
       for (double i = 0.66; i<=0.88; i=i+0.001){
         NamedCommands.registerCommand("Shoulder "+String.format("%.3f",i),m_ShoulderSubsystem.ShoulderSetPosition(i).alongWith(m_Shooter.HomeShoot()));
-        Commands.print("Shoulder "+String.format("%.3f",i)).schedule();
+        //Commands.print("Shoulder "+String.format("%.3f",i)).schedule();
+      // System.out.println("Shoulder "+i);
+    }
+    for (double i = 0.000; i<=(ShoulderConstants.amp-ShoulderConstants.home); i=i+0.001){
+        NamedCommands.registerCommand("Shoulder Home+"+String.format("%.3f",i),m_ShoulderSubsystem.ShoulderSetPosition(ShoulderConstants.home+i).alongWith(m_Shooter.HomeShoot())); //3500 RPM
+        //Commands.print("Shoulder "+String.format("%.3f",i)).schedule();
+      // System.out.println("Shoulder "+i);
+    }
+    for (int j = 1000; j<= 5000; j=j+200){
+        NamedCommands.registerCommand("Shooter Speed "+String.format("%d",j),m_Shooter.ShootDynamic(j));
+        //Commands.print("Shoulder "+String.format("%.3f",i)).schedule();
       // System.out.println("Shoulder "+i);
     }
 
+     for (double i = 0.66; i<=0.88; i=i+0.001){
+        NamedCommands.registerCommand("Shoulder "+String.format("%.3f",i)+" No Shoot",m_ShoulderSubsystem.ShoulderSetPosition(i));
+        //Commands.print("Shoulder "+String.format("%.3f",i)).schedule();
+      // System.out.println("Shoulder "+i);
+    }
+    
   }
 
   public Command turnTowardsTag(){
     return new RunCommand(()->m_robotDrive.drive(-MathUtil.applyDeadband(m_driverController.getLeftY(), OIConstants.kDriveDeadband),
                             -MathUtil.applyDeadband(m_driverController.getLeftX(), OIConstants.kDriveDeadband),
-                            -MathUtil.clamp(m_Limelight.getXPosition()*limelightadjustconstants.kP,-0.1,0.1),true,false)); 
-    }
+                            -MathUtil.clamp(m_Limelight.getXPosition()*limelightadjustconstants.kP+limelightadjustconstants.kFF,-0.1,0.1),true,false)); 
+  }
+
   public Command aimAtTag(){
-    return new RunCommand(()->m_ShoulderSubsystem.ShoulderSetPosition(ShoulderConstants.farshot+(m_Limelight.getYPosition()+2)*-0.0042514)); 
-    }
+    // return m_robotDrive.drive_command(0,0,MathUtil.clamp(m_Limelight.getXPosition()/limelightadjustconstants.kP,-0.5,0.5),true,false); 
+    return m_ShoulderSubsystem.ShoulderSetPosition(MathUtil.clamp(ShoulderConstants.farshot+(m_Limelight.getYPosition()+2)*-0.0042514, ShoulderConstants.farshot, ShoulderConstants.amp)); 
+  }
+  public boolean isTracking(){
+    return m_driverController.rightStick().getAsBoolean();
+  }
+
+
 
   public Infeed getInfeed(){
       return m_Infeed;
@@ -320,10 +349,10 @@ public LimelightSubsystem getLimelight(){
   }
 
   public final class limelightadjustconstants{
-    static double  kP=0.005,
+    static double  kP=0.01,
     kI=0,
     kD=0,
-    kFF=0.03;
+    kFF=0;
   }
   
 }
