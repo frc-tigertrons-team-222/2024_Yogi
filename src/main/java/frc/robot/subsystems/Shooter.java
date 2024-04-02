@@ -46,7 +46,7 @@ public class Shooter extends SubsystemBase {
     Beans_2_PID.setD(kD);
     Beans_2_PID.setFF(kFF); //decrease 
 
-    SmartDashboard.putNumber("Shooter Speed", 2400);
+    SmartDashboard.putNumber("Shooter Speed", 2000);
   }
 
   /**
@@ -59,7 +59,7 @@ public class Shooter extends SubsystemBase {
    //return runOnce(()-> Beans_1.set(-1*SmartDashboard.getNumber("Shooter Speed", 0.3))).withName("Run shooter");
     return new SequentialCommandGroup(
       runOnce(()-> Beans_1_PID.setReference(1*SmartDashboard.getNumber("Shooter Speed", 4800), CANSparkBase.ControlType.kVelocity)),
-      runOnce(()-> Beans_2_PID.setReference(-1*SmartDashboard.getNumber("Shooter Speed", 4800), CANSparkBase.ControlType.kVelocity))
+      runOnce(()-> Beans_2_PID.setReference(1*SmartDashboard.getNumber("Shooter Speed", 4800), CANSparkBase.ControlType.kVelocity))
     );
   }
 

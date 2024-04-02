@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 0.5287262996204155,
-        "y": 4.092954054859781
+        "x": 0.8799398121321225,
+        "y": 4.445889746880731
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.528726299620418,
-        "y": 4.092954054859781
+        "x": 1.879939812132124,
+        "y": 4.445889746880731
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 1.4057878828034107,
-        "y": 5.507946742395015
+        "x": 2.5763977418691195,
+        "y": 4.092954054859781
       },
       "prevControl": {
-        "x": 2.1191313037922477,
-        "y": 4.946627329157898
+        "x": 2.020661523504286,
+        "y": 4.114397967507624
       },
       "nextControl": null,
       "isLocked": false,
@@ -30,25 +30,7 @@
   ],
   "rotationTargets": [],
   "constraintZones": [],
-  "eventMarkers": [
-    {
-      "name": "New Event Marker",
-      "waypointRelativePos": 0,
-      "command": {
-        "type": "sequential",
-        "data": {
-          "commands": [
-            {
-              "type": "race",
-              "data": {
-                "commands": []
-              }
-            }
-          ]
-        }
-      }
-    }
-  ],
+  "eventMarkers": [],
   "globalConstraints": {
     "maxVelocity": 3.0,
     "maxAcceleration": 3.0,
@@ -63,7 +45,7 @@
   "reversed": false,
   "folder": "Maddy Got Bored...",
   "previewStartingState": {
-    "rotation": 0,
+    "rotation": -59.42077312751098,
     "velocity": 0
   },
   "useDefaultConstraints": true

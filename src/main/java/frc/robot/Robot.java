@@ -58,15 +58,15 @@ public class Robot extends TimedRobot {
     // List<String> auto_command_files = m_autos.getAutoNames(); 
 
     //Make the first .auto file the default option in shuffleboard
-    m_chooser.setDefaultOption("Amp Shot, Long Shot 1st Note", m_autos.makePathPlannerAuto("Amp Shot, Long Shot 1st Note"));
-    m_chooser.addOption("3 center note-Erik", m_autos.makePathPlannerAuto("3 center note-Erik"));
+    //m_chooser.setDefaultOption("Amp Shot, Long Shot 1st Note", m_autos.makePathPlannerAuto("Amp Shot, Long Shot 1st Note"));
+    m_chooser.setDefaultOption("3 center note-Erik", m_autos.makePathPlannerAuto("3 center note-Erik"));
     m_chooser.addOption("Amp Shot, Long Shot 2nd Note", m_autos.makePathPlannerAuto("Amp Shot, Long Shot 2nd Note"));
     m_chooser.addOption("SPSLRS", m_autos.makePathPlannerAuto("SPSLRS"));
     m_chooser.addOption("Test Amp Shot, Long Shot 1st Note", m_autos.makePathPlannerAuto("Test Amp Shot, Long Shot 1st Note"));
     m_chooser.addOption("Amp Shot, Long Shot 1st Note REL", m_autos.makePathPlannerAuto("Amp Shot, Long Shot 1st Note REL"));
-    m_chooser.addOption("3 center note-Erik REL", m_autos.makePathPlannerAuto("3 center note-Erik REL"));
+    //m_chooser.addOption("3 center note-Erik REL", m_autos.makePathPlannerAuto("3 center note-Erik REL"));
     m_chooser.addOption("Amp long shot 1st note def", m_autos.makePathPlannerAuto("Amp long shot 1st note def"));
-    m_chooser.addOption("Defensive Middle REL", m_autos.makePathPlannerAuto("Defensive Middle REL"));
+    m_chooser.addOption("Defensive Middle", m_autos.makePathPlannerAuto("Defensive Middle"));
 
     // m_chooser.addOption("Defensive Middle ", m_autos.makePathPlannerAuto("Defensive Middle "));
 

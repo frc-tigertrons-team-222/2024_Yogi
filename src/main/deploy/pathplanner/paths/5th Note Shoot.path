@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.9,
-        "y": 4.69
+        "x": 8.016762826874823,
+        "y": 0.9164772723844743
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.5429233708823726,
-        "y": 1.579460831130689
+        "x": 7.50002564138145,
+        "y": 0.9067275141676177
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 8.241007265862514,
-        "y": 2.36
+        "x": 4.8773406810471585,
+        "y": 1.3162173592755742
       },
       "prevControl": {
-        "x": 7.129534829140917,
-        "y": 1.0334743709867473
+        "x": 5.345329075456251,
+        "y": 1.3357168757092874
       },
       "nextControl": null,
       "isLocked": false,
@@ -32,21 +32,21 @@
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.5,
+    "maxVelocity": 3.0,
     "maxAcceleration": 3.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 40.36453657309748,
+    "rotation": -49.398705354995656,
     "rotateFast": true
   },
   "reversed": false,
-  "folder": "Erik's silly little paths",
+  "folder": "Defensive Middle (HAZARD)",
   "previewStartingState": {
-    "rotation": -40.0,
+    "rotation": -50.063616853030105,
     "velocity": 0
   },
-  "useDefaultConstraints": false
+  "useDefaultConstraints": true
 }

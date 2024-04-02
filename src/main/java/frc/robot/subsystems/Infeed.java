@@ -61,5 +61,8 @@ public class Infeed {
     public void periodic(){
 
     }
+    public Command IntakeContinuously(){
+                return new ParallelCommandGroup(m_WristInfeed.ContinuousIntake(1),m_GroundInfeed.ContinuousIntake(1)); //I thought we switched to sequential?
 
+    }
 }

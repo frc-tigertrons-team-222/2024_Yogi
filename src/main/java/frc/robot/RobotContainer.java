@@ -39,7 +39,7 @@ import frc.robot.subsystems.Shooter;
 import frc.robot.subsystems.Hook;
 import frc.robot.subsystems.Blinkin;
 import com.pathplanner.lib.auto.NamedCommands;
-
+import frc.robot.Constants.LimelightConstants;
 
 
 /*
@@ -154,7 +154,7 @@ public class RobotContainer {
     m_driverController.start().whileTrue(new RunCommand(()->m_robotDrive.zeroHeading()));
     m_driverController.back().whileTrue(m_Infeed.WristOuttake()).whileFalse(m_Infeed.StopInfeed());
    // m_driverController.rightStick().whileTrue(new ParallelCommandGroup(turnTowardsTag(),aimAtTag()));
-    m_driverController.rightStick().whileTrue(turnTowardsTag());
+    m_driverController.rightStick().whileTrue(turnTowardsTag().alongWith(aimAtTag()));
 
 
     //NOTE was onTrue
@@ -290,6 +290,7 @@ public class RobotContainer {
     NamedCommands.registerCommand("Shoulder 0.68",m_ShoulderSubsystem.ShoulderSetPosition(0.68).alongWith(m_Shooter.HomeShoot()));
     NamedCommands.registerCommand("Shoulder 0.72",m_ShoulderSubsystem.ShoulderSetPosition(0.72).alongWith(m_Shooter.HomeShoot()));
     NamedCommands.registerCommand("Shoulder 0.88",m_ShoulderSubsystem.ShoulderSetPosition(0.88).alongWith(m_Shooter.HomeShoot()));
+    NamedCommands.registerCommand("Continuous Intake",m_Infeed.IntakeContinuously().alongWith(m_Shooter.Shoot().repeatedly()));
 
       for (double i = 0.66; i<=0.88; i=i+0.001){
         NamedCommands.registerCommand("Shoulder "+String.format("%.3f",i),m_ShoulderSubsystem.ShoulderSetPosition(i).alongWith(m_Shooter.HomeShoot()));
@@ -323,7 +324,7 @@ public class RobotContainer {
 
   public Command aimAtTag(){
     // return m_robotDrive.drive_command(0,0,MathUtil.clamp(m_Limelight.getXPosition()/limelightadjustconstants.kP,-0.5,0.5),true,false); 
-    return m_ShoulderSubsystem.ShoulderSetPosition(MathUtil.clamp(ShoulderConstants.farshot+(m_Limelight.getYPosition()+2)*-0.0042514, ShoulderConstants.farshot, ShoulderConstants.amp)); 
+    return m_ShoulderSubsystem.ShoulderSetPosition(MathUtil.clamp(ShoulderConstants.home+(LimelightConstants.resting_angle-(LimelightConstants.angular_offset+m_Limelight.getYPosition()))/360, ShoulderConstants.home, ShoulderConstants.amp)); 
   }
   public boolean isTracking(){
     return m_driverController.rightStick().getAsBoolean();
