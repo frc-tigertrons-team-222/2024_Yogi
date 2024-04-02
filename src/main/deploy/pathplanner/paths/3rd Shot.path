@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 1.9,
-        "y": 4.69
+        "x": 2.7,
+        "y": 4.8
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.5429233708823726,
-        "y": 1.579460831130689
+        "x": 4.321604462692248,
+        "y": 5.01137572345952
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 8.241007265862514,
-        "y": 2.36
+        "x": 7.99726331043848,
+        "y": 7.468314794112784
       },
       "prevControl": {
-        "x": 7.129534829140917,
-        "y": 1.0334743709867473
+        "x": 6.105810216376914,
+        "y": 7.916803672082637
       },
       "nextControl": null,
       "isLocked": false,
@@ -32,21 +32,21 @@
   "constraintZones": [],
   "eventMarkers": [],
   "globalConstraints": {
-    "maxVelocity": 3.5,
+    "maxVelocity": 3.0,
     "maxAcceleration": 3.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": 40.36453657309748,
+    "rotation": 0.0,
     "rotateFast": true
   },
   "reversed": false,
-  "folder": "Erik's silly little paths",
+  "folder": "Maddy Got Bored...",
   "previewStartingState": {
-    "rotation": -40.0,
+    "rotation": 0,
     "velocity": 0
   },
-  "useDefaultConstraints": false
+  "useDefaultConstraints": true
 }

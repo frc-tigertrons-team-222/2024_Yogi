@@ -20,12 +20,18 @@
         {
           "type": "path",
           "data": {
-            "pathName": null
+            "pathName": "Go to line"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Run Intake"
           }
         }
       ]
     }
   },
-  "folder": "Home Relative Paths",
+  "folder": "Auto Paths",
   "choreoAuto": false
 }

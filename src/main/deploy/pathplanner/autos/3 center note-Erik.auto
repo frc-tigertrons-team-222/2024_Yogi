@@ -18,7 +18,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.693"
+                  "name": "Shoulder Home +0.259"
                 }
               },
               {
@@ -37,7 +37,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.730"
+                  "name": "Shoulder Home +0.259"
                 }
               },
               {
@@ -63,12 +63,6 @@
                 "type": "path",
                 "data": {
                   "pathName": "3 center note start"
-                }
-              },
-              {
-                "type": "named",
-                "data": {
-                  "name": "Infeed Intake"
                 }
               }
             ]

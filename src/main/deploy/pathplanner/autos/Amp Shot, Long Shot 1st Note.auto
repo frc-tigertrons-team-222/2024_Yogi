@@ -24,7 +24,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.737"
+                  "name": "Shoulder No Shoot"
                 }
               }
             ]
@@ -87,7 +87,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder Amp Pose"
+                  "name": "Shoulder No Wheel 0.934"
                 }
               }
             ]
@@ -125,7 +125,13 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder Amp Pose"
+                  "name": "Shoulder 0.934"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Shooter Wheel Speed "
                 }
               }
             ]
@@ -163,7 +169,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Infeed Intake"
+                  "name": "Shoulder Home+0.337"
                 }
               }
             ]
@@ -176,26 +182,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.770"
-                }
-              },
-              {
-                "type": "wait",
-                "data": {
-                  "waitTime": 1.0
-                }
-              }
-            ]
-          }
-        },
-        {
-          "type": "race",
-          "data": {
-            "commands": [
-              {
-                "type": "named",
-                "data": {
-                  "name": "Shoulder 0.770"
+                  "name": "Shoulder Home+0.337"
                 }
               },
               {

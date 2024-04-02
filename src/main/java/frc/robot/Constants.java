@@ -156,14 +156,17 @@ public final class Constants {
   public static final class ShoulderConstants {
     public static final double home = 0.681; //lol, was 0.677, was 0.714
     // public static final double upper = 0.973; //theoretically, was 0.947, was
-    public static final double upper = home + 0.259;
-    // public static final double amp = 0.967 +  0.253; //was 0.936, was
     public static final double amp = home +  0.253; 
     // public static final double farshot = 0.741;//was 0.704, was
     public static final double farshot = home + 0.027;
     // public static final double realfarshot = 0.808; //was 0.771, was
-    public static final double realfarshot = home + 0.094;
+    public static final double realfarshot = home + 0.084;
 
+
+  }
+  public static final class LimelightConstants{
+    public static final double resting_angle = 75;
+    public static final double angular_offset = 21.8;
 
   }
 }

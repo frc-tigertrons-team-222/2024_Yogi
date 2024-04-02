@@ -3,25 +3,25 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 0.7824422299675968,
-        "y": 4.397140955802102
+        "x": 0.5386982745461942,
+        "y": 6.893079059317263
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.07493497647328,
-        "y": 3.3929158594659246
+        "x": 1.581922403749797,
+        "y": 7.975302221388291
       },
       "isLocked": false,
       "linkedName": null
     },
     {
       "anchor": {
-        "x": 8.16,
-        "y": 0.8
+        "x": 6.827292324418378,
+        "y": 7.497564068762342
       },
       "prevControl": {
-        "x": 6.788293291550955,
-        "y": 0.5557362183607982
+        "x": 6.003323768595282,
+        "y": 7.9823658065843475
       },
       "nextControl": null,
       "isLocked": false,
@@ -33,15 +33,15 @@
   "eventMarkers": [
     {
       "name": "Intake",
-      "waypointRelativePos": 0.75,
+      "waypointRelativePos": 0.0,
       "command": {
-        "type": "parallel",
+        "type": "race",
         "data": {
           "commands": [
             {
               "type": "named",
               "data": {
-                "name": "Infeed Intake"
+                "name": "Continuous Intake"
               }
             }
           ]
@@ -50,21 +50,21 @@
     }
   ],
   "globalConstraints": {
-    "maxVelocity": 3.0,
+    "maxVelocity": 4.5,
     "maxAcceleration": 3.0,
     "maxAngularVelocity": 540.0,
     "maxAngularAcceleration": 720.0
   },
   "goalEndState": {
-    "velocity": 0,
+    "velocity": 3.0,
     "rotation": 0.0,
     "rotateFast": false
   },
   "reversed": false,
-  "folder": "Erik's silly little paths",
+  "folder": "Defensive Middle (HAZARD)",
   "previewStartingState": {
-    "rotation": -59.743562836470765,
+    "rotation": -0.48322061294402974,
     "velocity": 0
   },
-  "useDefaultConstraints": true
+  "useDefaultConstraints": false
 }
