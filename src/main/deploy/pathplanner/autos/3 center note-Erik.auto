@@ -18,7 +18,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder Home +0.259"
+                  "name": "Shoulder Home+0.056"
                 }
               },
               {
@@ -37,7 +37,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder Home +0.259"
+                  "name": "Shoulder Home+0.056"
                 }
               },
               {
@@ -81,13 +81,19 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.737"
+                  "name": "Shoulder Home+0.056"
                 }
               },
               {
                 "type": "wait",
                 "data": {
                   "waitTime": 0.5
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Shoulder No Shoot"
                 }
               }
             ]
@@ -100,7 +106,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.737"
+                  "name": "Shoulder Home+0.056"
                 }
               },
               {
@@ -113,6 +119,12 @@
                 "type": "named",
                 "data": {
                   "name": "Infeed Shoot"
+                }
+              },
+              {
+                "type": "named",
+                "data": {
+                  "name": "Shooter Speed 3500"
                 }
               }
             ]
@@ -150,7 +162,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.737"
+                  "name": "Shoulder Home+0.056"
                 }
               },
               {
@@ -169,7 +181,7 @@
               {
                 "type": "named",
                 "data": {
-                  "name": "Shoulder 0.737"
+                  "name": "Shoulder Home+0.056"
                 }
               },
               {
