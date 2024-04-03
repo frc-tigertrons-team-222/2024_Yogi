@@ -83,10 +83,9 @@ public class RobotContainer {
                   -MathUtil.applyDeadband(m_driverController.getLeftX(), OIConstants.kDriveDeadband),
                   -MathUtil.applyDeadband(m_driverController.getRightX(), OIConstants.kDriveDeadband),
                   true, true),
-              m_robotDrive),
-            new RunCommand(
-              ()->m_Hook.SetSpeed(-MathUtil.clamp(m_driverController2.getRightY(),-0.8,0.8)),
-              m_Hook)
+              m_robotDrive), 
+              climbChain()
+            
           )
         );
 
@@ -330,7 +329,13 @@ public class RobotContainer {
     return m_driverController.rightStick().getAsBoolean();
   }
 
-
+public Command climbChain(){
+  return new ParallelCommandGroup(new RunCommand(
+              ()->m_Hook.SetSpeed(-MathUtil.clamp(m_driverController2.getRightY(),-0.8,0.8)),
+              m_Hook),
+              runOnce(()->m_ShoulderSubsystem.ShoulderSpeed(-MathUtil.clamp(m_driverController2.getRightY(),-0.8,0.8)))
+              );
+}
 
   public Infeed getInfeed(){
       return m_Infeed;
